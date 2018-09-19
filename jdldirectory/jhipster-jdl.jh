@@ -10,9 +10,14 @@ entity Country {
 /** not an ignored comment */
 entity Location {
 	streetAddress String,
+    apt Integer,
 	postalCode String,
 	city String,
 	stateProvince String
+}
+
+entity Apartment {
+	aptNumber Integer
 }
 
 entity Department {
@@ -58,6 +63,10 @@ entity JobHistory {
 
 enum Language {
     FRENCH, ENGLISH, SPANISH
+}
+
+relationship OneToOne {
+	Location{apt} to Apartment
 }
 
 relationship OneToOne {
